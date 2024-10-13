@@ -1,28 +1,21 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-}
-
 /* Container for the todo app */
 .todo-container {
-  display: flex;
+  display: flex; /* Use flexbox for the layout */
   height: 100vh;
 }
 
 /* Sidebar on the left */
 .sidebar {
-  width: 250px;
+  width: 250px; /* Width of the sidebar */
   padding: 20px;
-  background-color: #f4f4f4;
-  border-right: 1px solid #ddd;
+  background-color: #f7f7f7; /* Background color */
+  border-right: 1px solid #ddd; /* Border between sidebar and tasks */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-/* Sidebar Text */
 .sidebar h2 {
   margin-bottom: 20px;
 }
@@ -32,9 +25,8 @@ body {
   font-size: 16px;
 }
 
-/* Sidebar Button */
 .sidebar button {
-  background-color: #28a745;
+  background-color: #28a745; /* Main button color */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -43,20 +35,20 @@ body {
 }
 
 .sidebar button:hover {
-  background-color: #218838;
+  background-color: #218838; /* Darker button color on hover */
 }
 
 /* Todo list on the right */
 .todo-list {
-  flex: 1;
+  flex: 1; /* Take up remaining space */
   padding: 20px;
-  overflow-y: auto;
+  overflow-y: auto; /* Scrollable */
 }
 
 /* Styling for individual todo items */
 .todo-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #ddd;
@@ -66,6 +58,8 @@ body {
 .task-text {
   flex: 1;
   margin: 0 10px;
+  word-wrap: break-word;
+  white-space: normal;
   max-width: 75%;
 }
 
@@ -76,23 +70,24 @@ body {
 
 /* Popup modal styling */
 .popup {
-  position: fixed;
+  position: fixed; /* Fix the popup in the viewport */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex; /* Center the popup */
   justify-content: center;
+  align-items: center;
 }
 
 .popup-content {
-  background-color: white;
+  background-color: white; /* Popup background */
   padding: 20px;
-  border-radius: 5px;
-  width: 300px;
+  border-radius: 5px; /* Rounded corners */
+  width: 300px; /* Width of the popup */
   text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for the popup */
 }
 
 .popup-content h3 {
@@ -108,7 +103,7 @@ body {
 }
 
 .popup-content button {
-  background-color: #007bff;
+  background-color: #007bff; /* Primary button color */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -117,10 +112,31 @@ body {
 }
 
 .popup-content button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker button color on hover */
 }
 
-/* Responsive design adjustments */
+.popup-content button:nth-child(2) {
+  background-color: #6c757d; /* Secondary button color */
+}
+
+.popup-content button:nth-child(2):hover {
+  background-color: #5a6268; /* Darker secondary button color on hover */
+}
+
+/* Button styling */
+button {
+  background-color: #f44336; /* General button color */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d32f2f; /* Darker button color on hover */
+}
+
+/* Make sure the layout adjusts to different screen sizes */
 @media (max-width: 768px) {
   .todo-container {
     flex-direction: column; /* Stack the sidebar and todo list */
