@@ -1,16 +1,15 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-}
-
-/* Container for the todo app */
-.todo-container {
-  display: flex;
   height: 100vh;
 }
 
-/* Sidebar on the left */
+.todo-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
+
 .sidebar {
   width: 250px;
   padding: 20px;
@@ -20,9 +19,10 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-/* Sidebar Text */
 .sidebar h2 {
   margin-bottom: 20px;
 }
@@ -32,7 +32,6 @@ body {
   font-size: 16px;
 }
 
-/* Sidebar Button */
 .sidebar button {
   background-color: #28a745;
   color: white;
@@ -46,14 +45,26 @@ body {
   background-color: #218838;
 }
 
-/* Todo list on the right */
+.sidebar input[type="date"] {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.sidebar .selected-date {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .todo-list {
-  flex: 1;
+  flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
 }
 
-/* Styling for individual todo items */
 .todo-item {
   display: flex;
   align-items: flex-start;
@@ -74,7 +85,6 @@ body {
   color: #999;
 }
 
-/* Popup modal styling */
 .popup {
   position: fixed;
   top: 0;
@@ -120,13 +130,26 @@ body {
   background-color: #0056b3;
 }
 
-/* Responsive design adjustments */
 @media (max-width: 768px) {
   .todo-container {
-    flex-direction: column; /* Stack the sidebar and todo list */
+    flex-direction: column;
   }
   .sidebar {
-    width: 100%; /* Full width on smaller screens */
-    border-right: none; /* Remove border */
+    width: 100%;
+    border-right: none;
   }
+}
+
+.day-navigation button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.day-navigation button:hover {
+  background-color: #0056b3;
 }
